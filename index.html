@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>requirejs+jquery test</title>
+    <script data-main="main" src="requirejs/1.0.7/require-jquery.js"></script>
+</head>
+<body>
+<script data-template="path-list" type="text/x-handlebars-template">
+<div class="configured-paths">
+    <h1>Added with Handlebars</h1>
+    <ul>
+        {{#paths}}
+        <li>{{> path-item}}</li>
+        {{/paths}}
+    </ul>
+</div>
+</script>
+<script data-template="path-list-item" data-partial="path-item" type="text/x-handlebars-template">
+    <span class="path">{{.}}</span>
+</script>
+</body>
+</html>

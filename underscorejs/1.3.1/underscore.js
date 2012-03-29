@@ -6,7 +6,7 @@
 //     For all details and documentation:
 //     http://documentcloud.github.com/underscore
 
-require(function() {
+define(function() {
 
   // Baseline setup
   // --------------

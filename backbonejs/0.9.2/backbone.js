@@ -5,7 +5,7 @@
 //     For all details and documentation:
 //     http://backbonejs.org
 
-require(['jquery', 'underscore'], function($, _) {
+define(['jquery', 'underscore'], function($, _) {
 
   // Initial Setup
   // -------------
