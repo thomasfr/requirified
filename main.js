@@ -4,14 +4,15 @@
         "Handlebars":"handlebars/1.0.0.beta.6/handlebars",
         "underscore":"underscorejs/1.3.1/underscore",
         "Backbone":"backbonejs/0.9.2/backbone",
-        "Bootstrap":"bootstrap/2.0.2/bootstrap"
+        "Bootstrap":"bootstrap/2.0.2/bootstrap",
+        "noty":"noty/0.1/jquery.noty"
     };
 
     require.config({
         paths:paths
     });
 
-    require(['$', 'Handlebars', 'underscore', 'Backbone', 'Bootstrap'], function ($, Handlebars, _, Backbone, Bootstrap) {
+    require(['$', 'Handlebars', 'underscore', 'Backbone', 'Bootstrap', 'noty'], function ($, Handlebars, _, Backbone, Bootstrap, noty) {
         console.log("jQuery", $);
         console.log('Handlebars', Handlebars);
         console.log('Underscore', _);
@@ -23,17 +24,27 @@
         var pathsArray = [];
         var pathString = '<div class="configured-paths"><h1>Added with jQuery</h1>';
         _.each(paths, function (path) {
-            pathString += '<div>' + path + '</div>';
+            pathString += '<div class="path">' + path + '</div>';
             pathsArray.push(path);
         });
-        $('body').append(pathString + '</div>');
+        $('#container').append(pathString + '</div>');
 
         var pathItemPartialSource = $('script[data-partial=path-item]').first().html();
         Handlebars.registerPartial('path-item', pathItemPartialSource);
 
         var pathListTemplateSource = $('script[data-template=path-list]').first().html();
         var pathListTemplate = Handlebars.compile(pathListTemplateSource);
-        $('body').append(pathListTemplate({paths:pathsArray}));
+        $('#container').append(pathListTemplate({paths:pathsArray}));
+
+        $('.path').on('click', function () {
+            noty({
+                text:'You clicked "' + $(this).html()+'"',
+                theme:'noty_theme_twitter',
+                closable:true,
+                closeOnSelfClick:true,
+                timeout: 2000
+            });
+        });
     });
 
 }());
