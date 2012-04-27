@@ -1,15 +1,15 @@
 (function () {
 
     var paths = {
-        "Handlebars":"handlebars/1.0.0.beta.6/handlebars",
-        "underscore":"underscorejs/1.3.1/underscore",
-        "Backbone":"backbonejs/0.9.2/backbone",
-        "Bootstrap":"bootstrap/2.0.2/bootstrap",
-        "noty":"noty/0.1/jquery.noty"
+        "Handlebars": "../handlebars/1.0.0.beta.6/handlebars",
+        "underscore": "../underscorejs/1.3.3/underscore",
+        "Backbone":   "../backbonejs/0.9.2/backbone",
+        "Bootstrap":  "../bootstrap/2.0.2/bootstrap",
+        "noty":       "../noty/1.1.1/jquery.noty"
     };
 
     require.config({
-        paths:paths
+        paths: paths
     });
 
     require(['$', 'Handlebars', 'underscore', 'Backbone', 'Bootstrap', 'noty'], function ($, Handlebars, _, Backbone, Bootstrap, noty) {
@@ -34,15 +34,17 @@
 
         var pathListTemplateSource = $('script[data-template=path-list]').first().html();
         var pathListTemplate = Handlebars.compile(pathListTemplateSource);
-        $('#container').append(pathListTemplate({paths:pathsArray}));
+        $('#container').append(pathListTemplate({paths: pathsArray}));
 
         $('.path').on('click', function () {
             noty({
-                text:'You clicked "' + $(this).html()+'"',
-                theme:'noty_theme_twitter',
-                closable:true,
-                closeOnSelfClick:true,
-                timeout: 2000
+                text:             'You clicked "' + $(this).html() + '"',
+                theme:            'noty_theme_twitter',
+                closable:         true,
+                closeOnSelfClick: true,
+                closeButton:      true,
+                timeout:          2000,
+                layout:           "topRight"
             });
         });
     });

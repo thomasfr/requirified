@@ -1,7 +1,7 @@
 About
 =====
 
-Browser-only AMD version of Backbone, Underscore, Bootstrap, noty and Handlebars.
+Browser-only AMD versions of Backbone, Underscore, Bootstrap, noty and Handlebars.
 I deleted checks for 'exports', 'module', objects etc.
 Modules getting returned only - no global (window) namespace pollution.
 

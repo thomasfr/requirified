@@ -2,13 +2,23 @@
 <html>
 <head>
     <title>requirejs+jquery test</title>
-    <script data-main="main" src="requirejs/1.0.7/require-jquery.js"></script>
+    <script data-main="main" src="../requirejs/1.0.8/require-jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.noty.css" />
     <link rel="stylesheet" type="text/css" href="css/noty_theme_twitter.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
-<div class="container-fluid" id="container">
+<div class="container" id="container">
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="#">
+                    requirified
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 <script data-template="path-list" type="text/x-handlebars-template">
     <div class="configured-paths">
