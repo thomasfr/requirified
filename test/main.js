@@ -5,14 +5,15 @@
         "underscore": "../underscorejs/1.3.3/underscore",
         "Backbone":   "../backbonejs/0.9.2/backbone",
         "Bootstrap":  "../bootstrap/2.0.2/bootstrap",
-        "noty":       "../noty/1.1.1/jquery.noty"
+        "noty":       "../noty/1.1.1/jquery.noty",
+        "jquery":     "../jquery/1.7.2/jquery"
     };
 
     require.config({
         paths: paths
     });
 
-    require(['$', 'Handlebars', 'underscore', 'Backbone', 'Bootstrap', 'noty'], function ($, Handlebars, _, Backbone, Bootstrap, noty) {
+    require(['jquery', 'Handlebars', 'underscore', 'Backbone', 'Bootstrap', 'noty'], function ($, Handlebars, _, Backbone, Bootstrap, noty) {
         console.log("jQuery", $);
         console.log('Handlebars', Handlebars);
         console.log('Underscore', _);
